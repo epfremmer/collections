@@ -1,5 +1,8 @@
 # PHP Collections
 
+[![Build Status](https://travis-ci.org/epfremmer/collections.svg)](https://travis-ci.org/epfremmer/collections?branch=tags%2Fv1.0.0)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/epfremmer/collections/badges/quality-score.png?b=release%2Fv1.0.0)](https://scrutinizer-ci.com/g/epfremmer/collections/?branch=tags%2Fv1.0.0)
+
 ## Overview
 
 This library was intended to provide base PHP collection classes that can be extended to provide 
