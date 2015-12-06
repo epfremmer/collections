@@ -7,7 +7,7 @@
 namespace Epfremme\Tests\Collection\Traits;
 
 use Iterator;
-use Epfremme\Collection\Collection;
+use Epfremme\Collection\BaseCollection;
 
 /**
  * Class IterableTraitTest
@@ -17,7 +17,7 @@ use Epfremme\Collection\Collection;
 class IterableTraitTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var Collection
+     * @var BaseCollection
      */
     private $collection;
 
@@ -28,7 +28,7 @@ class IterableTraitTest extends \PHPUnit_Framework_TestCase
     {
         parent::setUp();
 
-        $this->collection = new Collection([1, 2, 3, 'a' => 4, 'b' => 5]);
+        $this->collection = new BaseCollection([1, 2, 3, 'a' => 4, 'b' => 5]);
     }
 
     /**
@@ -67,6 +67,21 @@ class IterableTraitTest extends \PHPUnit_Framework_TestCase
 
         $this->collection->seek('a');
         $this->assertEquals(4, $this->collection->current());
+    }
+
+    /**
+     * Test collection first position
+     *
+     * @depends testKey
+     * @depends testCurrent
+     * @return void
+     */
+    public function testFirst()
+    {
+        $this->collection->seek(2);
+        $this->collection->first();
+        $this->assertEquals(0, $this->collection->key());
+        $this->assertEquals(1, $this->collection->current());
     }
 
     /**

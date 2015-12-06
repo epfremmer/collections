@@ -7,7 +7,7 @@
 namespace Epfremme\Collection\Traits;
 
 /**
- * Class ArrayAccessTrait
+ * Trait ArrayAccessTrait
  *
  * @property array|mixed[] $elements
  * @package Epfremme\Collection\Traits

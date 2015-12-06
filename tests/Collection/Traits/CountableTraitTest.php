@@ -7,7 +7,7 @@
 namespace Epfremme\Tests\Collection\Traits;
 
 use Countable;
-use Epfremme\Collection\Collection;
+use Epfremme\Collection\BaseCollection;
 
 /**
  * Class CountableTraitTest
@@ -17,7 +17,7 @@ use Epfremme\Collection\Collection;
 class CountableTraitTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var Collection
+     * @var BaseCollection
      */
     private $collection;
 
@@ -28,7 +28,7 @@ class CountableTraitTest extends \PHPUnit_Framework_TestCase
     {
         parent::setUp();
 
-        $this->collection = new Collection([1, 2, 3, 'a' => 4, 'b' => 5]);
+        $this->collection = new BaseCollection([1, 2, 3, 'a' => 4, 'b' => 5]);
     }
 
     /**

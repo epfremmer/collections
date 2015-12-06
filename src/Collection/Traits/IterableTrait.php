@@ -7,7 +7,7 @@
 namespace Epfremme\Collection\Traits;
 
 /**
- * Class IterableTrait
+ * Trait IterableTrait
  *
  * @property array|mixed[] $elements
  * @package Epfremme\Collection\Traits
@@ -25,6 +25,16 @@ trait IterableTrait
     }
 
     /**
+     * Return the fist element
+     *
+     * @return mixed
+     */
+    public function first()
+    {
+        return reset($this->elements);
+    }
+
+    /**
      * Advance and return last element
      *
      * @return mixed
@@ -37,11 +47,11 @@ trait IterableTrait
     /**
      * Move elements pointer forward
      *
-     * @return void
+     * @return mixed
      */
     public function next()
     {
-        next($this->elements);
+        return next($this->elements);
     }
 
     /**
@@ -51,7 +61,7 @@ trait IterableTrait
      */
     public function prev()
     {
-        prev($this->elements);
+        return prev($this->elements);
     }
 
     /**
@@ -75,12 +85,22 @@ trait IterableTrait
     }
 
     /**
-     * Rewind the Iterator to the first element
+     * Reset pointer and return the first element
+     *
+     * @return mixed
+     */
+    public function reset()
+    {
+        return reset($this->elements);
+    }
+
+    /**
+     * Rewind the collection pointer
      *
      * @return void
      */
     public function rewind()
     {
-        reset($this->elements);
+        $this->reset();
     }
 }

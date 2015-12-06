@@ -7,7 +7,7 @@
 namespace Epfremme\Collection\Traits;
 
 /**
- * Class CountableTrait
+ * Trait CountableTrait
  *
  * @property array|mixed[] $elements
  * @package Epfremme\Collection\Traits
