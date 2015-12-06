@@ -1,8 +1,8 @@
 # PHP Collections
 
-[![Build Status](https://travis-ci.org/epfremmer/collections.svg)](https://travis-ci.org/epfremmer/collections?branch=tags%2Fv1.0.0)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/epfremmer/collections/badges/quality-score.png?b=release%2Fv1.0.0)](https://scrutinizer-ci.com/g/epfremmer/collections/?branch=tags%2Fv1.0.0)
-[![Code Coverage](https://scrutinizer-ci.com/g/epfremmer/collections/badges/coverage.png?b=release%2Fv1.0.0)](https://scrutinizer-ci.com/g/epfremmer/collections/?branch=tags%2Fv1.0.0)
+[![Build Status](https://travis-ci.org/epfremmer/collections.svg)](https://travis-ci.org/epfremmer/collections?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/epfremmer/collections/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/epfremmer/collections/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/epfremmer/collections/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/epfremmer/collections/?branch=master)
 
 ## Overview
 
