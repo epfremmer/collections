@@ -39,6 +39,17 @@ trait SearchableTrait
     }
 
     /**
+     * Test if key exists in collection
+     *
+     * @param mixed $key
+     * @return bool
+     */
+    public function keyExists($key)
+    {
+        return array_key_exists($key, $this->elements);
+    }
+
+    /**
      * Return new collection with elements filtered by function
      *
      * @param Closure $fn

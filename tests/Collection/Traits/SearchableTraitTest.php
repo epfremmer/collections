@@ -54,6 +54,17 @@ class SearchableTraitTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test validating collection key exists
+     *
+     * @return void
+     */
+    public function testKeyExists()
+    {
+        $this->assertTrue($this->collection->keyExists(2));
+        $this->assertFalse($this->collection->keyExists('noop'));
+    }
+
+    /**
      * Test filtering collection elements
      *
      * @return void

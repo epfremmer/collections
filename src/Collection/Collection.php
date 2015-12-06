@@ -62,36 +62,16 @@ class Collection extends BaseCollection
     }
 
     /**
-     * Return new collection sliced from current elements
-     *
-     * @param int $offset
-     * @param int $length
-     * @return static
-     */
-    public function slice($offset = 0, $length = 1)
-    {
-        return new static(array_slice($this->elements, $offset, $length, true));
-    }
-
-    /**
-     * Splice and return new collection from current elements
-     *
-     * @return static
-     */
-    public function splice()
-    {
-        return new static(array_splice($this->elements, $offset, $length));
-    }
-
-    /**
      * Add element to collection
      *
      * @param $element
-     * @return void
+     * @return $this
      */
     public function add($element)
     {
         $this->push($element);
+
+        return $this;
     }
 
     /**
@@ -112,6 +92,45 @@ class Collection extends BaseCollection
     }
 
     /**
+     * Set new value to collection at position
+     *
+     * @param mixed $key
+     * @param mixed $value
+     * @return $this
+     */
+    public function set($key, $value)
+    {
+        $this->offsetSet($key, $value);
+
+        return $this;
+    }
+
+    /**
+     * Return new collection sliced from current elements
+     *
+     * @param int $offset
+     * @param int $length
+     * @return static
+     */
+    public function slice($offset = 0, $length = 0)
+    {
+        return new static(array_slice($this->elements, $offset, $length, true));
+    }
+
+    /**
+     * Splice and return new collection from current elements
+     *
+     * @param int $offset
+     * @param int $length
+     * @param array|mixed $replacement
+     * @return static
+     */
+    public function splice($offset = 0, $length = 0, $replacement = [])
+    {
+        return new static(array_splice($this->elements, $offset, $length, $replacement));
+    }
+
+    /**
      * Map function on against collection elements
      *
      * @param Closure $fn
@@ -119,7 +138,7 @@ class Collection extends BaseCollection
      */
     public function map(Closure $fn)
     {
-        return new static(array_map($fn, $this->elements));
+        return new static(array_map($fn, $this->getValues(), $this->getKeys()));
     }
 
     /**
@@ -147,7 +166,7 @@ class Collection extends BaseCollection
 
     /**
      * Sort collection by use defined function and
-     * maintain element indicies
+     * maintain element keys/indicies
      *
      * @param Closure $fn
      * @return bool
