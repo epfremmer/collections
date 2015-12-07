@@ -185,7 +185,7 @@ class Collection extends BaseCollection
     public function each(Closure $fn)
     {
         foreach ($this->elements as $key => $element) {
-            if (!$fn($key, $element)) {
+            if ($fn($element, $key) === false) {
                 return false;
             }
         }

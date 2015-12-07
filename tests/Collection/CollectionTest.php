@@ -298,11 +298,11 @@ class CollectionTest extends \PHPUnit_Framework_TestCase
      */
     public function testEach()
     {
-        $success = $this->collection->each(function($key, $value) {
+        $success = $this->collection->each(function($value, $key) {
             $this->assertTrue($this->collection->keyExists($key));
             $this->assertEquals($value, $this->collection->get($key));
 
-            return $this->collection->set($key, $value * 2);
+            $this->collection->set($key, $value * 2);
         });
 
         $this->assertTrue($success);
